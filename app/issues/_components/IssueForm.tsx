@@ -11,13 +11,14 @@ import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import { z } from "zod";
+import { Issue } from "@prisma/client";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
 });
 type IssueFormData = z.infer<typeof createIssueSchema>;
 
-const IssueForm = () => {
+const IssueForm = ({ issue }: { issue?: Issue }) => {
   const router = useRouter();
   const {
     register,
@@ -50,12 +51,13 @@ const IssueForm = () => {
       )}
       <form className="max-w-xl space-y-3" onSubmit={onSubmit}>
         <TextField.Root>
-          <TextField.Input placeholder="Title" {...register("title")} />
+          <TextField.Input defaultValue={issue?.title} placeholder="Title" {...register("title")} />
         </TextField.Root>
         <ErrorMessage>{errors.title?.message}</ErrorMessage>
         <Controller
           name="description"
           control={control}
+          defaultValue={issue?.description}
           render={({ field }) => <SimpleMDE placeholder="Description" {...field} />}
         />
         <ErrorMessage>{errors.description?.message}</ErrorMessage>
