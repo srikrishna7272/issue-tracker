@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { AiFillBug } from "react-icons/ai";
 import { useSession } from "next-auth/react";
 import { Avatar, Box, Container, DropdownMenu, Flex, Text } from "@radix-ui/themes";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const NavBar = () => {
   return (
@@ -58,6 +60,8 @@ const NavLinks = () => {
 
 const AuthStatus = () => {
   const { status, data: session } = useSession();
+
+  if (status === "loading") return <Skeleton width="3rem" />;
 
   return (
     <Box>
