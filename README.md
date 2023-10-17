@@ -12,15 +12,18 @@ https://user-images.githubusercontent.com/105886453/275380291-2a31f558-f7c8-4fc7
 
 ## Features
 
-- User can signin or signout using gmail.
-- Users can view dashboards, issues but, he can not edit or delete any of the issue.
-- After signing in, Users can create, edit and delete issues.
-- Implemented markdown editor/ viewer for creating and viewing issues.
-- Users can sort the issues based on status, creation date or issue itself..
-- Users can filter issue by status of issue.
-- users can view 10 issues per page and users can move from first page to final page or final page to first page. 
-- Users can see status of each isse in a dashboard.
-- This application is complete mobile responsive.
+
+- The user can sign in or sign out using Gmail.
+- Users can view dashboards and issues, but they cannot edit or delete any of them.
+- After signing in, users can create, edit, and delete issues.
+- implemented a markdown editor and viewer for creating and viewing issues.
+- Users can sort the issues based on status, creation date, or the issue itself.
+- Users can filter issues by status.
+- Users can view 10 issues per page, and they can move from the first page to the final page or the final page to the first page.
+- Users can see the status of each issue on a dashboard.
+- This application is completely mobile-responsive.
+
+
 
 
 ## Tech Stack
@@ -79,6 +82,4 @@ Start the server
 This application has been deployed using vercel.
 
 
-## Acknowledgements
 
- - [Code with Mosh]
